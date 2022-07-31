@@ -1,12 +1,14 @@
 import React, { useState} from 'react'
 import { Wrapper, Container, Choices, Cart, Buttons } from './top.js'
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import CustomizedSwitches from '../toggle/toggle.jsx'
 import CartDropdown from '../cartDropdown/CartDropdown.jsx';
 
 const Top = () => {
     const [isClicked, setIsClicked] = useState(false)
     const {cartTotalQuantity} = useSelector((state) => state.cart);
+    let navigate = useNavigate();
 
     return (
         <Wrapper>
@@ -22,8 +24,7 @@ const Top = () => {
                     {isClicked ? <CartDropdown />: null}
                 </Cart>
                 <Buttons>
-                    <button className="signIn">sign in</button>
-                    <button className="reg">Register</button>
+                    <button className="signIn" onClick={() => navigate('/signin')}>sign in</button>
                 </Buttons>
             </Container>
         </Wrapper>

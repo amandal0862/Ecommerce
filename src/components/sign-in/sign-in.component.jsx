@@ -15,22 +15,22 @@ class SignIn extends React.Component {
     };
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
+  // handleSubmit = event => {
+  //   event.preventDefault();
 
-    this.setState({ email: '', password: '' });
-  };
+  //   this.setState({ email: '', password: '' });
+  // };
 
-  handleChange = event => {
-    const { value, name } = event.target;
+  // handleChange = event => {
+  //   const { value, name } = event.target;
 
-    this.setState({ [name]: value });
-  };
+  //   this.setState({ [name]: value });
+  // };
 
   render() {
     return (
       <div className='sign-in'>
-        <h2>I already have an account</h2>
+        <h1 className='title'>I already have an account</h1>
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>

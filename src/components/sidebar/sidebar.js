@@ -18,9 +18,12 @@ export const Container = styled.div`
 export const Logo = styled.div`
     height: 6rem;
     width: 100%;
-    display:flex ;
-    justify-content: center;
-    align-items: center;
+    // display:flex ;
+    // justify-content: center;
+    // align-items: center;
+    padding: 20px;
+    padding-left: 30px;
+    // margin: 30px;
     user-select: none;
     cursor: pointer;
 
