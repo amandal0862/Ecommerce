@@ -4,7 +4,13 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
 import './sign-in.styles.scss';
+import {auth} from '../../firebase'
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
+function signInWithGoogle() {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+}
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
@@ -14,19 +20,7 @@ class SignIn extends React.Component {
       password: ''
     };
   }
-
-  // handleSubmit = event => {
-  //   event.preventDefault();
-
-  //   this.setState({ email: '', password: '' });
-  // };
-
-  // handleChange = event => {
-  //   const { value, name } = event.target;
-
-  //   this.setState({ [name]: value });
-  // };
-
+ 
   render() {
     return (
       <div className='sign-in'>
@@ -51,6 +45,7 @@ class SignIn extends React.Component {
             required
           />
           <CustomButton type='submit'> Sign in </CustomButton>
+          <CustomButton onClick={signInWithGoogle} type='submit'> Sign in with google</CustomButton>
         </form>
       </div>
     );
