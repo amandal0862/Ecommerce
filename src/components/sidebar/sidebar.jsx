@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
-
-import {useDispatch} from "react-redux"
+import React from 'react'
 import { Wrapper,Container, Logo, List, ListItem, Dis, Auth } from './sidebar.js'
+import {auth} from '../../firebase'
+import { useNavigate } from "react-router-dom";
 
 
 const Sidebar = () => {
-
-    const dispatch = useDispatch()
-
-    const [isClicked, setIsClicked] = useState(false)
+    const navigate = useNavigate();
 
     const lists = document.querySelectorAll('.list')
     function activeLink() {
@@ -45,7 +42,7 @@ const Sidebar = () => {
                 <Dis>
                     <p>invite a friend and a get discount of <span>10%</span></p>
                 </Dis>
-                <Auth>
+                <Auth onClick={() => auth.signOut().then(() => {navigate('/signin')})}>
                     <img src={require('../../assets/icons/logout.png')} alt="" />
                     <p>Log Out</p>
                 </Auth>
