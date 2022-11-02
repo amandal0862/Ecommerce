@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getTotals } from "../../features/cart/cartSlice";
+import React from "react";
+import { useSelector } from "react-redux";
+// import { getTotals } from "../../features/cart/cartSlice";
 import CheckoutItem from "../../components/checkout/CheckoutItem.jsx";
 import StripeCheckoutButton from "../../components/stripeButton/StrBtn";
 import { Logo } from "../../components/sidebar/sidebar";
@@ -9,7 +9,7 @@ import "./checkout.css";
 
 const Checkout = () => {
   const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   let navigate = useNavigate();
 
   // useEffect(() => {
